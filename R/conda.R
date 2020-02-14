@@ -150,7 +150,7 @@ conda_install <- function(envname, packages, forge = TRUE, channel = NULL, pip =
 
   } else {
     args <- c("install")
-    if (forge)
+    if (forge & is.null(channel) )
       args <- c(args, "-c", "conda-forge")
     if (! is.null(channel))
       args <- c(args, "-c", channel)
